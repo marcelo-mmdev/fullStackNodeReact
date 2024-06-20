@@ -1,8 +1,8 @@
 // import { useState } from 'react'
 
 import "./style.css";
-import Trash from "../assets/trash.svg";
-import api from "../services/api";
+import Trash from "../../assets/trash.svg";
+import api from "../../services/api";
 import { useEffect, useRef, useState } from "react";
 
 function Home() {
@@ -23,12 +23,12 @@ function Home() {
       age: inputAge.current.value,
       email: inputEmail.current.value,
     });
-    getUsers()
+    getUsers();
   }
 
   async function deleteUsers(id) {
     await api.delete(`/usuarios/${id}`);
-    getUsers()
+    getUsers();
   }
 
   useEffect(() => {
@@ -41,12 +41,7 @@ function Home() {
         <form>
           <h1>Cadastro de Usuários</h1>
           <input placeholder="Nome" name="name" type="text" ref={inputName} />
-          <input
-            placeholder="Idade"
-            name="idade"
-            type="text"
-            ref={inputAge}
-          />
+          <input placeholder="Idade" name="idade" type="text" ref={inputAge} />
           <input
             placeholder="E-mail"
             name="email"
@@ -71,7 +66,7 @@ function Home() {
                 Email: <span>{user.email}</span>{" "}
               </p>
             </div>
-            <button onClick={() => deleteUsers(user.id)} >
+            <button onClick={() => deleteUsers(user.id)}>
               <img src={Trash} alt="Delete" />
             </button>
           </div>
