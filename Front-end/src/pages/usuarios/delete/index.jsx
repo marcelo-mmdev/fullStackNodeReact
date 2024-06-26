@@ -3,7 +3,7 @@ import Trash from "../../assets/trash.svg";
 import api from "../services/api";
 import { useEffect, useState } from "react";
 
-function EditarUsuarios() {
+function DeleteUsuarios() {
   const [users, setUsers] = useState([]);
 
 
@@ -48,4 +48,4 @@ function EditarUsuarios() {
   );
 }
 
-export default EditarUsuarios;
+export default DeleteUsuarios;
